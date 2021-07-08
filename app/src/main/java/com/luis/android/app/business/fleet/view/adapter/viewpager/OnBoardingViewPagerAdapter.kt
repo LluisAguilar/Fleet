@@ -34,11 +34,12 @@ class OnBoardingViewPagerAdapter(
 
         val onBoardingImageView = itemView.findViewById<ImageView>(R.id.image_view)
         val onboardingTextView = itemView.findViewById<TextView>(R.id.onboarding_title_tv)
+        val onboardingDinamicImageView = itemView.findViewById<ImageView>(R.id.onboarding_logo_iv)
 
         onboardingTextView.text = onBoardingList.get(position).titleText
 
         Picasso.get().load(onBoardingList.get(position).imageUrl).into(
-            onBoardingImageView,
+                onboardingDinamicImageView,
             object : Callback {
                 override fun onSuccess() {
                     println("Success")

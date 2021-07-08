@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_default_20_dimen">20dp</dimen>
+    <dimen name="default_textview_size_16sp">16sp</dimen>
+    <dimen name="margin_default_10_dimen">10dp</dimen>
+</resources>
