@@ -6,7 +6,7 @@ import com.luis.android.app.business.fleet.R
 import com.luis.android.app.business.fleet.view.fragment.OnBoardingFragment
 import com.luis.android.app.business.fleet.view.fragment.PresentationFragment
 
-class OnBoardingActivity : AppCompatActivity() {
+class OnBoardingActivity : BaseActivity() {
 
     val onboardingFragment = OnBoardingFragment.getInstance()
     val presentationFragment = PresentationFragment.getInstance()

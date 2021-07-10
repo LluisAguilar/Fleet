@@ -25,11 +25,6 @@ class DotsSliderAdapter(val linearLayout: LinearLayout, var listSize: Int, val v
         mDotscount = 0
         mDots = emptyArray()
         linearLayout.removeAllViews()
-
-        mTimer.let{
-            it.cancel()
-            Log.e("TimerCancelled", "true")
-        }
     }
 
     fun initSliderWithTimer(){

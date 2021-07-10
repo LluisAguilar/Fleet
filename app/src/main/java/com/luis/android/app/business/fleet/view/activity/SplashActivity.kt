@@ -6,12 +6,15 @@ import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
+import com.luis.android.app.business.fleet.MethodUtils
 import com.luis.android.app.business.fleet.R
 
-class SplashActivity : AppCompatActivity() {
+class SplashActivity : BaseActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
+        MethodUtils.setCurrentDeviceLanguage()
         startAnimations()
     }
 

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.luis.android.app.business.fleet">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -14,10 +14,12 @@
         android:theme="@style/Fleet.App.Theme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
+        <activity android:name=".view.activity.BaseActivity"></activity>
         <activity android:name=".view.activity.OnBoardingActivity" />
         <activity android:name=".view.activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
