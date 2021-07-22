@@ -5,4 +5,11 @@
     <string name="skip">Skip</string>
     <string name="next">Next</string>
     <string name="back">Back</string>
+    <string name="choose_option">Choose an option</string>
+    <string name="quick_search">Quick search</string>
+    <string name="create_business">Create business</string>
+    <string name="create_account">Create client</string>
+    <string name="quick_search_description">Quickly launch a search and look for the service you need</string>
+    <string name="create_business_description">Create you own business and service and let the people know your greatness</string>
+    <string name="create_account_description">Create a profile to participate in the community and get unique promos</string>
 </resources>

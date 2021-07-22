@@ -1,6 +1,5 @@
 package com.luis.android.app.business.fleet.view.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.luis.android.app.business.fleet.R
 import com.luis.android.app.business.fleet.view.fragment.OnBoardingFragment
