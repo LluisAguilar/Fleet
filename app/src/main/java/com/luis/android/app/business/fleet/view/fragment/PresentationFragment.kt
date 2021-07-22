@@ -12,12 +12,13 @@ import com.luis.android.app.business.fleet.R
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import java.util.*
-import kotlin.concurrent.schedule
 
 class PresentationFragment : Fragment() {
 
     private lateinit var mView: View
+    private lateinit var quickSearchDescription:TextView
+    private lateinit var createBusinessDescription:TextView
+    private lateinit var createClientDescription:TextView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,12 +27,20 @@ class PresentationFragment : Fragment() {
     ): View {
         mView = inflater.inflate(R.layout.fragment_presentation, container, false)
 
-        val quickSearchDescription = mView.findViewById<TextView>(R.id.quick_search_description_tv)
-        val createBusinessDescription =
-            mView.findViewById<TextView>(R.id.create_business_description_tv)
-        val createClientDescription =
-            mView.findViewById<TextView>(R.id.create_client_description_tv)
+        quickSearchDescription = mView.findViewById(R.id.quick_search_description_tv)
+        createBusinessDescription =
+            mView.findViewById(R.id.create_business_description_tv)
+        createClientDescription =
+            mView.findViewById(R.id.create_client_description_tv)
+        return mView
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        startanimation()
+    }
+
+    fun startanimation(){
         runBlocking {
             launch {
                 animateDescriptionText(
@@ -41,11 +50,9 @@ class PresentationFragment : Fragment() {
                 )
             }
         }
-
-        return mView
     }
 
-    suspend fun animateDescriptionText(
+    private suspend fun animateDescriptionText(
         animatedText: TextView,
         animatedText2: TextView,
         animatedText3: TextView
