@@ -23,6 +23,10 @@ class OnBoardingActivity : BaseActivity() {
     fun moveToPresentationFragment() {
         supportFragmentManager
                 .beginTransaction()
+                .setCustomAnimations(
+                        R.anim.slide_in_right_to_left,
+                        R.anim.slide_out_right_to_left
+                )
                 .replace(R.id.onboarding_fragment_container, presentationFragment)
                 .commit()
     }
