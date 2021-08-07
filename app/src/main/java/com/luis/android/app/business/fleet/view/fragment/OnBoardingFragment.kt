@@ -39,7 +39,7 @@ class OnBoardingFragment : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?
     ): View {
         mView = inflater.inflate(R.layout.fragment_on_boarding, container, false)
-        onBoardingViewPager = mView.findViewById<ViewPager>(R.id.onboarding_viewpager)
+        onBoardingViewPager = mView.findViewById(R.id.onboarding_viewpager)
         val skipTv = mView.findViewById<TextView>(R.id.skip_tv)
         val nextTv = mView.findViewById<TextView>(R.id.next_tv)
         val backTv = mView.findViewById<TextView>(R.id.back_tv)

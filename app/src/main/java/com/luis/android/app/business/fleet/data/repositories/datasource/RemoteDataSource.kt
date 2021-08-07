@@ -6,6 +6,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.luis.android.app.business.fleet.StringUtils.Companion.EMPTY_VALUE_STRING
 import com.luis.android.app.business.fleet.StringUtils.Companion.FIREBASE_DATABASE_INSTANCE
 import com.luis.android.app.business.fleet.domain.model.OnBoardingPageModel
 
@@ -22,10 +23,10 @@ class RemoteDataSource(application: Application) {
                 val list = snapshot.children.map { data -> data.getValue(OnBoardingPageModel::class.java) }.map {
                     it.let { it1 ->
                         OnBoardingPageModel(
-                            title = it?.title ?: "Empty",
-                            subtitle = it?.subtitle  ?: "Empty",
-                            body = it?.body  ?: "Empty",
-                            image = it?.image  ?: "Empty"
+                            title = it?.title ?: EMPTY_VALUE_STRING,
+                            subtitle = it?.subtitle  ?: EMPTY_VALUE_STRING,
+                            body = it?.body  ?: EMPTY_VALUE_STRING,
+                            image = it?.image  ?: EMPTY_VALUE_STRING
                         )
                     }
                 }

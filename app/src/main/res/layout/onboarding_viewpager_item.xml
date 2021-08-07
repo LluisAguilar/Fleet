@@ -52,17 +52,31 @@
                 app:layout_constraintBottom_toTopOf="@id/onboarding_sub_title_tv"
                 >
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_gravity="center"
                     >
+
                     <ImageView
                         android:id="@+id/onboarding_logo_iv"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:src="@drawable/android_logo"
+                        android:contentDescription="@string/onboarding_image"
                         android:scaleType="centerCrop"
+                        android:visibility="gone"
                         />
+
+                    <ProgressBar
+                        android:id="@+id/onboarding_progress_bar"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:progressTint="@color/colorPrimaryDark"
+                        />
+
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>

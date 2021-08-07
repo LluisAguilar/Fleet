@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.viewpager.widget.PagerAdapter
@@ -35,6 +36,7 @@ class OnBoardingViewPagerAdapter(
         val itemView = layoutInflater.inflate(R.layout.onboarding_viewpager_item, container, false)
 
         val onBoardingImageView = itemView.findViewById<ImageView>(R.id.image_view)
+        val onBoardingProgressBar = itemView.findViewById<ProgressBar>(R.id.onboarding_progress_bar)
         val title = itemView.findViewById<TextView>(R.id.onboarding_title_tv)
         val subtitle = itemView.findViewById<TextView>(R.id.onboarding_sub_title_tv)
         val body = itemView.findViewById<TextView>(R.id.onboarding_body_tv)
@@ -49,7 +51,8 @@ class OnBoardingViewPagerAdapter(
                 onboardingDinamicImageView,
                 object : Callback {
                     override fun onSuccess() {
-                        println("Success")
+                        onboardingDinamicImageView.visibility = View.VISIBLE
+                        onBoardingProgressBar.visibility = View.GONE
                     }
 
                     override fun onError(e: Exception) {
