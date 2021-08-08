@@ -12,12 +12,11 @@
     <ImageView
         android:id="@+id/presentation_logo_iv"
         android:layout_width="200dp"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         android:layout_gravity="center"
         android:contentDescription="@string/presentation_logo_image"
         android:layout_marginTop="@dimen/margin_default_20_dimen"
-        android:scaleType="centerCrop"
-        android:src="@drawable/android_logo" />
+        android:src="@drawable/fleet_logo" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_layout_container"

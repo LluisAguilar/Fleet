@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/splash_layout"
-    android:background="@color/colorPrimary"
+    android:background="@color/white"
     tools:context=".view.activity.SplashActivity">
 
     <LinearLayout
@@ -19,11 +19,11 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="200dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:gravity="center"
-            android:src="@drawable/android_logo"/>
+            android:src="@drawable/fleet_logo"/>
 
         <TextView
             android:layout_width="match_parent"
