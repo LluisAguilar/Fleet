@@ -6,9 +6,16 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorSecondary">@color/colorSecondary</item>
         <item name="android:textViewStyle">@style/DefaultTextViewStyle</item>
+        <item name="android:editTextStyle">@style/DefaultEditTextStyle</item>
     </style>
 
     <style name="DefaultTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:textSize">@dimen/default_textview_size_16sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/balooda_two_regular</item>
+    </style>
+
+    <style name="DefaultEditTextStyle" parent="android:Widget.EditText">
         <item name="android:textSize">@dimen/default_textview_size_16sp</item>
         <item name="android:textColor">@color/black</item>
         <item name="fontFamily">@font/balooda_two_regular</item>

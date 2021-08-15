@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.luis.android.app.business.fleet">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -14,7 +16,9 @@
         android:theme="@style/Fleet.App.Theme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".view.activity.BaseActivity"></activity>
+        <activity android:name=".view.activity.HomeSearchActivity"></activity>
+        <activity android:name=".view.activity.CreateAccountActivity" />
+        <activity android:name=".view.activity.BaseActivity" />
         <activity android:name=".view.activity.OnBoardingActivity" />
         <activity android:name=".view.activity.SplashActivity">
             <intent-filter>

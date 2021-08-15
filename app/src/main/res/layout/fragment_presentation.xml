@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:paddingStart="@dimen/margin_default_10_dimen"
     android:paddingEnd="@dimen/margin_default_10_dimen"
-    tools:context=".view.fragment.PresentationFragment">
+    tools:context=".view.fragment.onboarding.PresentationFragment">
 
     <ImageView
         android:id="@+id/presentation_logo_iv"

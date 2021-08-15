@@ -9,9 +9,8 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.viewpager.widget.PagerAdapter
-import com.luis.android.app.business.fleet.MethodUtils.Companion.getStringByLanguage
+import com.luis.android.app.business.fleet.view.helper.MethodUtils.Companion.getStringByLanguage
 import com.luis.android.app.business.fleet.R
-import com.luis.android.app.business.fleet.StringUtils
 import com.luis.android.app.business.fleet.domain.model.OnBoardingPageModel
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso

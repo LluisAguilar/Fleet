@@ -16,4 +16,11 @@
     <!-- Image content description -->
     <string name="presentation_logo_image">presentation logo image</string>
     <string name="onboarding_image">onboarding image</string>
+    <string name="name">Name</string>
+    <string name="lastName">Last name</string>
+    <string name="username">User name</string>
+    <string name="email">E-mail</string>
+    <string name="password">Password</string>
+    <string name="repeat_password">Repeat password</string>
+    <string name="phoneNumber">Phone number</string>
 </resources>

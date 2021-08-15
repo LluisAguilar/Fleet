@@ -2,8 +2,8 @@ package com.luis.android.app.business.fleet.view.activity
 
 import android.os.Bundle
 import com.luis.android.app.business.fleet.R
-import com.luis.android.app.business.fleet.view.fragment.OnBoardingFragment
-import com.luis.android.app.business.fleet.view.fragment.PresentationFragment
+import com.luis.android.app.business.fleet.view.fragment.onboarding.OnBoardingFragment
+import com.luis.android.app.business.fleet.view.fragment.onboarding.PresentationFragment
 
 class OnBoardingActivity : BaseActivity() {
 

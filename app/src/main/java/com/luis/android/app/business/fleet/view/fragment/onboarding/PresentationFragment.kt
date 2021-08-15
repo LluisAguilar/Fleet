@@ -1,4 +1,4 @@
-package com.luis.android.app.business.fleet.view.fragment
+package com.luis.android.app.business.fleet.view.fragment.onboarding
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,6 +10,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import com.luis.android.app.business.fleet.R
+import com.luis.android.app.business.fleet.view.helper.StringUtils
+import com.luis.android.app.business.fleet.view.helper.navigatePresentationToCreateAccountActivity
 import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
@@ -59,10 +61,14 @@ class PresentationFragment : Fragment(), View.OnClickListener {
         when (v.id) {
 
             R.id.quick_search_cv -> {
-
+                context?.let {
+                    navigatePresentationToCreateAccountActivity(it,StringUtils.PAGE_SEARCH)
+                }
             }
             R.id.create_account_cv -> {
-
+                context?.let {
+                    navigatePresentationToCreateAccountActivity(it, StringUtils.PAGE_CREATE)
+                }
             }
             R.id.info_iv -> {
                 if (quickSearchTv.visibility == View.GONE) {

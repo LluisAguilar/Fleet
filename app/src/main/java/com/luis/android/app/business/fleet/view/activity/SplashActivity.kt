@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.LinearLayout
-import com.luis.android.app.business.fleet.MethodUtils
+import com.luis.android.app.business.fleet.view.helper.MethodUtils
 import com.luis.android.app.business.fleet.R
 
 class SplashActivity : BaseActivity() {

@@ -1,4 +1,4 @@
-package com.luis.android.app.business.fleet.view.fragment
+package com.luis.android.app.business.fleet.view.fragment.onboarding
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,7 +11,7 @@ import androidx.core.view.size
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager.widget.ViewPager
 import com.luis.android.app.business.fleet.R
-import com.luis.android.app.business.fleet.StringUtils.Companion.EMPTY_VALUE_STRING
+import com.luis.android.app.business.fleet.view.helper.StringUtils.Companion.EMPTY_VALUE_STRING
 import com.luis.android.app.business.fleet.domain.model.OnBoardingPageModel
 import com.luis.android.app.business.fleet.domain.viewmodel.AppConfigurationViewModel
 import com.luis.android.app.business.fleet.view.activity.OnBoardingActivity
