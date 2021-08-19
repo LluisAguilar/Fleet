@@ -21,6 +21,7 @@ class PresentationFragment : Fragment(), View.OnClickListener {
     private lateinit var mView: View
     private lateinit var quickSearchTv: TextView
     private lateinit var createClientTv: TextView
+    private val DELAY_TIME_MILISECONDS = 1000L
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -62,7 +63,7 @@ class PresentationFragment : Fragment(), View.OnClickListener {
 
             R.id.quick_search_cv -> {
                 context?.let {
-                    navigatePresentationToCreateAccountActivity(it,StringUtils.PAGE_SEARCH)
+                    navigatePresentationToCreateAccountActivity(it, StringUtils.PAGE_SEARCH)
                 }
             }
             R.id.create_account_cv -> {
@@ -81,36 +82,24 @@ class PresentationFragment : Fragment(), View.OnClickListener {
     }
 
     private suspend fun startAnimSucessive() {
-        withContext(IO) {
+        CoroutineScope(IO).launch {
+            delay(DELAY_TIME_MILISECONDS)
+            animateDescriptionText(quickSearchTv)
+            delay(DELAY_TIME_MILISECONDS)
+            animateDescriptionText(createClientTv)
 
-            val firstTextJob = launch {
-                delay(1500)
-                animateDescriptionText(quickSearchTv)
-            }
-            firstTextJob.join()
-
-            val thirdTextJob = async {
-                delay(500)
-                animateDescriptionText(createClientTv)
-            }
-            thirdTextJob.join()
         }
     }
 
-    private fun animateDescriptionText(animatedText: TextView) {
+    private suspend fun animateDescriptionText(animatedText: TextView) {
         var anim = AnimationUtils.loadAnimation(context, R.anim.alpha_invisible_to_visible)
         anim.reset()
         anim = AnimationUtils.loadAnimation(context, R.anim.translate_short)
         anim.reset()
         animatedText.clearAnimation()
         animatedText.startAnimation(anim)
-        runBlocking {
-            launch {
-                withContext(Main) {
-                    animatedText.visibility = View.VISIBLE
-                }
-            }
+        withContext(Main) {
+            animatedText.visibility = View.VISIBLE
         }
-
     }
 }
