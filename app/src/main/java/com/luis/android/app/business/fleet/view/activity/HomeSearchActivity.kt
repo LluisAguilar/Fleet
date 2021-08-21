@@ -8,6 +8,7 @@ import com.blumonpay.mpos.utils.LocationHelper
 import com.google.android.gms.maps.model.LatLng
 import com.luis.android.app.business.fleet.R
 import com.luis.android.app.business.fleet.view.fragment.search.HomeSearchFragment
+import com.luis.android.app.business.fleet.view.helper.AlertHelper
 import com.luis.android.app.business.fleet.view.helper.StringUtils
 import com.luis.android.app.business.fleet.view.helper.StringUtils.Companion.ACCESS_FINE_LOCATION_REQUEST_CODE
 import com.luis.android.app.business.fleet.view.helper.location.AddressPositionListener
@@ -16,6 +17,7 @@ class HomeSearchActivity : BaseActivity(),  AddressPositionListener {
 
     private val mSearchFragment = HomeSearchFragment.getInstance()
     private lateinit var locationHelper: LocationHelper
+    private lateinit var alertHelper: AlertHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +29,7 @@ class HomeSearchActivity : BaseActivity(),  AddressPositionListener {
             .commit()
 
         locationHelper = LocationHelper(this, this, this)
+        alertHelper = AlertHelper(this)
 
     }
 
@@ -40,7 +43,7 @@ class HomeSearchActivity : BaseActivity(),  AddressPositionListener {
             if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
                 locationHelper = LocationHelper(this, this, this)
             } else {
-                Log.e("PermissionRequest", "Denied")
+                alertHelper.alertPermissionDenied("Permissions denied")
             }
         }
 
@@ -61,7 +64,7 @@ class HomeSearchActivity : BaseActivity(),  AddressPositionListener {
             if (resultCode == RESULT_OK) {
                 locationHelper = LocationHelper(this, this, this)
             } else {
-                Log.e("TurnOnLocation", "Denied")
+                alertHelper.alertPermissionDenied("Permissions denied")
             }
         }
 

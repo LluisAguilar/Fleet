@@ -30,4 +30,11 @@ class OnBoardingActivity : BaseActivity() {
                 .replace(R.id.onboarding_fragment_container, presentationFragment)
                 .commit()
     }
+
+    override fun onResume() {
+        super.onResume()
+        if (presentationFragment.isVisible) {
+            presentationFragment.resetAnimation()
+        }
+    }
 }

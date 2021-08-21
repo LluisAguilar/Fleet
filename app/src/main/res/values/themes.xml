@@ -21,4 +21,9 @@
         <item name="fontFamily">@font/balooda_two_regular</item>
     </style>
 
+    <!-- Alert theme -->
+    <style name="Theme_Dialog_Translucent" parent="android:Theme.DeviceDefault.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
 </resources>

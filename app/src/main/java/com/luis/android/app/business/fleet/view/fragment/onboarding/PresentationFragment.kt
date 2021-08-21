@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
@@ -102,4 +103,18 @@ class PresentationFragment : Fragment(), View.OnClickListener {
             animatedText.visibility = View.VISIBLE
         }
     }
+
+    private fun hideDescriptionText() {
+       quickSearchTv.visibility = GONE
+        createClientTv.visibility = GONE
+    }
+
+    fun resetAnimation() {
+        hideDescriptionText()
+        CoroutineScope(IO).launch {
+            startAnimSucessive()
+        }
+    }
+
+
 }

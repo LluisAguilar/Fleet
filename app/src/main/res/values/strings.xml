@@ -23,4 +23,6 @@
     <string name="password">Password</string>
     <string name="repeat_password">Repeat password</string>
     <string name="phoneNumber">Phone number</string>
+    <string name="continue_txt">Continue</string>
+    <string name="accept">Accept</string>
 </resources>
