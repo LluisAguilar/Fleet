@@ -3,7 +3,6 @@ package com.luis.android.app.business.fleet.view.activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.util.Log
 import com.blumonpay.mpos.utils.LocationHelper
 import com.google.android.gms.maps.model.LatLng
 import com.luis.android.app.business.fleet.R
@@ -16,8 +15,9 @@ import com.luis.android.app.business.fleet.view.helper.location.AddressPositionL
 class HomeSearchActivity : BaseActivity(),  AddressPositionListener {
 
     private val mSearchFragment = HomeSearchFragment.getInstance()
-    private lateinit var locationHelper: LocationHelper
-    private lateinit var alertHelper: AlertHelper
+    private lateinit var mLocationHelper: LocationHelper
+    private lateinit var mAlertHelper: AlertHelper
+    private lateinit var mLocationStringBuilder:StringBuilder
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,8 +28,8 @@ class HomeSearchActivity : BaseActivity(),  AddressPositionListener {
             .add(R.id.home_search_container, mSearchFragment)
             .commit()
 
-        locationHelper = LocationHelper(this, this, this)
-        alertHelper = AlertHelper(this)
+        mLocationHelper = LocationHelper(this, this, this)
+        mAlertHelper = AlertHelper(this)
 
     }
 
@@ -41,9 +41,9 @@ class HomeSearchActivity : BaseActivity(),  AddressPositionListener {
 
         if (requestCode == ACCESS_FINE_LOCATION_REQUEST_CODE) {
             if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
-                locationHelper = LocationHelper(this, this, this)
+                mLocationHelper = LocationHelper(this, this, this)
             } else {
-                alertHelper.alertPermissionDenied("Permissions denied")
+                mAlertHelper.alertPermissionDenied("Permissions denied")
             }
         }
 
@@ -51,20 +51,24 @@ class HomeSearchActivity : BaseActivity(),  AddressPositionListener {
     }
 
     override fun onAdressReceived(myCoordinates: LatLng) {
-        Log.e("Coordinates_received", myCoordinates.toString())
+        mLocationStringBuilder = StringBuilder()
+        mLocationStringBuilder.clear()
+        mLocationStringBuilder.append(myCoordinates.toString())
+        mSearchFragment.setUserLocationText(mLocationStringBuilder.toString())
     }
 
-    override fun onCityReceived(city: String) {
-        Log.e("City_received", city)
+    override fun onCityReceived(city: String, fullAddress:String) {
+        mLocationStringBuilder.append(" : $fullAddress - City: $city")
+        mSearchFragment.setUserLocationText(mLocationStringBuilder.toString())
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 
         if (requestCode == StringUtils.TURN_ON_LOCATION_SERVICE) {
             if (resultCode == RESULT_OK) {
-                locationHelper = LocationHelper(this, this, this)
+                mLocationHelper = LocationHelper(this, this, this)
             } else {
-                alertHelper.alertPermissionDenied("Permissions denied")
+                mAlertHelper.alertPermissionDenied("Permissions denied")
             }
         }
 

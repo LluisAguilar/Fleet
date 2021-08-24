@@ -91,19 +91,20 @@
 
         <TextView
             android:id="@+id/quick_search_description_tv"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_default_20_dimen"
             android:layout_marginTop="@dimen/margin_default_10_dimen"
             android:layout_marginEnd="@dimen/margin_default_20_dimen"
+            android:textAlignment="center"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
             android:text="@string/quick_search_description"
             android:textColor="@color/gray_text"
             android:textSize="@dimen/default_textview_size_14sp"
             android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="@id/quick_search_cv"
-            app:layout_constraintStart_toStartOf="@id/quick_search_cv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/quick_search_cv"
             tools:visibility="visible" />
 
@@ -149,7 +150,7 @@
 
         <TextView
             android:id="@+id/create_client_description_tv"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_default_20_dimen"
             android:layout_marginTop="@dimen/margin_default_10_dimen"
@@ -161,8 +162,8 @@
             android:textColor="@color/gray_text"
             android:textSize="@dimen/default_textview_size_14sp"
             android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="@id/create_client_description_tv"
-            app:layout_constraintStart_toStartOf="@id/create_client_description_tv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/create_account_cv"
             tools:visibility="visible" />
 

@@ -16,24 +16,32 @@ class CreateAccountActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_account)
 
-        mPage = intent.getIntExtra("page",0)
+        mPage = intent.getIntExtra("page", 0)
 
-        when(mPage){
+        when (mPage) {
 
             PAGE_CREATE -> {
                 supportFragmentManager
-                    .beginTransaction()
-                    .add(R.id.create_account_container,mCreateAccountFragment)
-                    .commit()
+                        .beginTransaction()
+                        .add(R.id.create_account_container, mCreateAccountFragment)
+                        .commit()
             }
 
             PAGE_LOGIN -> {
                 supportFragmentManager
-                    .beginTransaction()
-                    .add(R.id.create_account_container,mLoginFragment)
-                    .commit()
+                        .beginTransaction()
+                        .add(R.id.create_account_container, mLoginFragment)
+                        .commit()
             }
 
+        }
+    }
+
+    override fun onBackPressed() {
+        if (mCreateAccountFragment.isVisible) {
+            mCreateAccountFragment.onImageBackPressed()
+        } else {
+            super.onBackPressed()
         }
     }
 

@@ -199,11 +199,15 @@ class LocationHelper(
             Log.d("mylog", "Complete Address: $addresses")
             Log.d("mylog", "Address: $myAdress")
             myAdress?.let {
-                adressPositionListener.onCityReceived(addresses[0].locality)
+                if (addresses[0] != null){
+                    adressPositionListener.onCityReceived(addresses[0].locality, it)
+                } else {
+                    adressPositionListener.onCityReceived("No city available", it)
+                }
             }
         } catch (e: IOException) {
             e.printStackTrace()
-            adressPositionListener.onCityReceived("error")
+            adressPositionListener.onCityReceived("error", "")
         }
     }
 }

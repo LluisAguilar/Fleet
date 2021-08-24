@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.luis.android.app.business.fleet.R
+import kotlinx.android.synthetic.main.fragment_home_search.view.*
 
 
 class HomeSearchFragment : Fragment() {
@@ -28,5 +29,9 @@ class HomeSearchFragment : Fragment() {
 
         @JvmStatic
         fun getInstance() = HomeSearchFragment()
+    }
+
+    fun setUserLocationText(location:String){
+        mView.address_location_tv.text = location
     }
 }

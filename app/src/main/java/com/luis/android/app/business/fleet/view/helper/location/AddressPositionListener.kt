@@ -6,6 +6,6 @@ interface AddressPositionListener {
 
     //fun onAdressReceived(adress: String?)
     fun onAdressReceived(myCoordinates: LatLng)
-    fun onCityReceived(city: String)
+    fun onCityReceived(city: String, fullAddress:String)
 
 }
