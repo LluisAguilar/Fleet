@@ -11,12 +11,12 @@ import androidx.cardview.widget.CardView
 import androidx.viewpager.widget.PagerAdapter
 import com.luis.android.app.business.fleet.view.helper.MethodUtils.Companion.getStringByLanguage
 import com.luis.android.app.business.fleet.R
-import com.luis.android.app.business.fleet.domain.model.OnBoardingPageModel
+import com.luis.android.app.business.fleet.domain.model.OnBoardingPage
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 
 class OnBoardingViewPagerAdapter(
-    var onBoardingList: ArrayList<OnBoardingPageModel>,
+    var onBoardingList: ArrayList<OnBoardingPage>,
     val context: Context
 ) : PagerAdapter() {
 
@@ -68,7 +68,7 @@ class OnBoardingViewPagerAdapter(
         container.removeView(obj as CardView)
     }
 
-    fun updateData(onBoardingList: ArrayList<OnBoardingPageModel>) {
+    fun updateData(onBoardingList: ArrayList<OnBoardingPage>) {
         this.onBoardingList = onBoardingList
         notifyDataSetChanged()
     }

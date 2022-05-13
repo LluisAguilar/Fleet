@@ -1,6 +1,6 @@
 package com.luis.android.app.business.fleet.view.helper
 
-import java.util.*
+import java.util.Locale
 
 class MethodUtils {
 

@@ -12,8 +12,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager.widget.ViewPager
 import com.luis.android.app.business.fleet.R
 import com.luis.android.app.business.fleet.view.helper.StringUtils.Companion.EMPTY_VALUE_STRING
-import com.luis.android.app.business.fleet.domain.model.OnBoardingPageModel
-import com.luis.android.app.business.fleet.domain.viewmodel.AppConfigurationViewModel
+import com.luis.android.app.business.fleet.domain.model.OnBoardingPage
+import com.luis.android.app.business.fleet.view.viewmodel.AppConfigurationViewModel
 import com.luis.android.app.business.fleet.view.activity.OnBoardingActivity
 import com.luis.android.app.business.fleet.view.adapter.DotsSliderAdapter
 import com.luis.android.app.business.fleet.view.adapter.viewpager.OnBoardingViewPagerAdapter
@@ -46,7 +46,7 @@ class OnBoardingFragment : Fragment(), View.OnClickListener {
 
         // Inflate the layout for this fragment
 
-        initOnBoardingViewPager(arrayListOf(OnBoardingPageModel(EMPTY_VALUE_STRING, EMPTY_VALUE_STRING, EMPTY_VALUE_STRING, EMPTY_VALUE_STRING,)))
+        initOnBoardingViewPager(arrayListOf(OnBoardingPage(EMPTY_VALUE_STRING, EMPTY_VALUE_STRING, EMPTY_VALUE_STRING, EMPTY_VALUE_STRING,)))
         getOnBoardingList()
 
         skipTv.setOnClickListener(this)
@@ -57,7 +57,7 @@ class OnBoardingFragment : Fragment(), View.OnClickListener {
     }
 
     private fun getOnBoardingList() {
-        val onBoardingList = arrayListOf<OnBoardingPageModel>()
+        val onBoardingList = arrayListOf<OnBoardingPage>()
 
         appConfigViewModel.getOnBoardingDataPages().observe(activity as OnBoardingActivity, {
             if (it.isNotEmpty()) {
@@ -72,12 +72,12 @@ class OnBoardingFragment : Fragment(), View.OnClickListener {
         })
     }
 
-    private fun updateOnBoardingAdapter(onBoardingList: ArrayList<OnBoardingPageModel>) {
+    private fun updateOnBoardingAdapter(onBoardingList: ArrayList<OnBoardingPage>) {
         onBoardingPagerAdapter.updateData(onBoardingList)
         onBoardingViewPager.adapter = onBoardingPagerAdapter
     }
 
-    private fun initOnBoardingViewPager(onBoardingList: ArrayList<OnBoardingPageModel>){
+    private fun initOnBoardingViewPager(onBoardingList: ArrayList<OnBoardingPage>){
         onBoardingPagerAdapter =
             context?.let { OnBoardingViewPagerAdapter(onBoardingList, it) }!!
 

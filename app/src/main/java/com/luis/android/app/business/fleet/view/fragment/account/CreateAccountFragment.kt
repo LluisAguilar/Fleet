@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.luis.android.app.business.fleet.R
+import com.luis.android.app.business.fleet.view.activity.CreateAccountActivity
 import com.luis.android.app.business.fleet.view.helper.FieldValidationHelper.Companion.isEmailValid
 import com.luis.android.app.business.fleet.view.helper.FieldValidationHelper.Companion.isEmpty
 import com.luis.android.app.business.fleet.view.helper.FieldValidationHelper.Companion.isPasswordValid
@@ -46,7 +47,11 @@ class CreateAccountFragment : Fragment(), View.OnClickListener {
                 if (mView.account_data_layout.visibility == View.VISIBLE){
                     mView.account_data_layout.visibility = View.GONE
                     mView.user_data_layout.visibility = View.VISIBLE
+                    mView.continue_btn_tv.text = getString(R.string.create_account)
                 }
+                val userDataViewModel = (activity as CreateAccountActivity).getUserDataViewModel()
+
+                userDataViewModel.createNewUserAcount("luis@gmail.com", "luis123Aguilar")
             }
 
             icon_back_iv, user_icon_back_iv -> {
@@ -62,6 +67,7 @@ class CreateAccountFragment : Fragment(), View.OnClickListener {
         } else if (mView.user_data_layout.visibility == View.VISIBLE){
             mView.account_data_layout.visibility = View.VISIBLE
             mView.user_data_layout.visibility = View.GONE
+            mView.continue_btn_tv.text = getString(R.string.continue_txt)
         }
     }
 

@@ -48,6 +48,7 @@ dependencies {
 
     //Firebase
     implementation 'com.google.firebase:firebase-database:20.0.1'
+    implementation 'com.google.firebase:firebase-auth:21.0.1'
 
     //Location services
     implementation 'com.google.android.gms:play-services-maps:17.0.1'
