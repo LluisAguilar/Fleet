@@ -41,7 +41,6 @@ class CreateAccountFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(p0: View?) {
         when(p0){
-
             continue_btn -> {
                 validateUserAccountFields()
                 if (mView.account_data_layout.visibility == View.VISIBLE){
@@ -50,14 +49,18 @@ class CreateAccountFragment : Fragment(), View.OnClickListener {
                     mView.continue_btn_tv.text = getString(R.string.create_account)
                 }
                 val userDataViewModel = (activity as CreateAccountActivity).getUserDataViewModel()
-
                 userDataViewModel.createNewUserAcount("luis@gmail.com", "luis123Aguilar")
+                    .observe(this) { user ->
+                        if (user.response){
+                            println(user.uId)
+                        }else {
+                            println("Could not create user")
+                        }
+                    }
             }
-
             icon_back_iv, user_icon_back_iv -> {
                onImageBackPressed()
             }
-
         }
     }
 
