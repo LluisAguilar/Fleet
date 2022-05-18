@@ -129,7 +129,7 @@ class LocationHelper(
                                     // Show the dialog by calling startResolutionForResult(),
                                     // and check the result in onActivityResult().
                                     resolvable.startResolutionForResult(
-                                        activity,
+                                        activity!!,
                                         StringUtils.TURN_ON_LOCATION_SERVICE
                                     )
                                 } catch (e: SendIntentException) {

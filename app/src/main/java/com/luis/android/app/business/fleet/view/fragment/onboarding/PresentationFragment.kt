@@ -22,6 +22,7 @@ class PresentationFragment : Fragment(), View.OnClickListener {
     private lateinit var mView: View
     private lateinit var quickSearchTv: TextView
     private lateinit var createClientTv: TextView
+    private lateinit var loginClientTv: TextView
     private val DELAY_TIME_MILISECONDS = 1000L
 
     override fun onCreateView(
@@ -32,13 +33,16 @@ class PresentationFragment : Fragment(), View.OnClickListener {
         mView = inflater.inflate(R.layout.fragment_presentation, container, false)
 
         val quickSearchBtn = mView.findViewById<CardView>(R.id.quick_search_cv)
+        val loginAccountBtn = mView.findViewById<CardView>(R.id.login_account_cv)
         val createClientBtn = mView.findViewById<CardView>(R.id.create_account_cv)
         val infoIv = mView.findViewById<ImageView>(R.id.info_iv)
 
         quickSearchTv = mView.findViewById(R.id.quick_search_description_tv)
         createClientTv = mView.findViewById(R.id.create_client_description_tv)
+        loginClientTv = mView.findViewById(R.id.login_client_description_tv)
 
         quickSearchBtn.setOnClickListener(this)
+        loginAccountBtn.setOnClickListener(this)
         createClientBtn.setOnClickListener(this)
         infoIv.setOnClickListener(this)
 
@@ -67,6 +71,11 @@ class PresentationFragment : Fragment(), View.OnClickListener {
                     navigatePresentationToCreateAccountActivity(it, StringUtils.PAGE_SEARCH)
                 }
             }
+            R.id.login_account_cv -> {
+                context?.let {
+                    navigatePresentationToCreateAccountActivity(it, StringUtils.PAGE_LOGIN)
+                }
+            }
             R.id.create_account_cv -> {
                 context?.let {
                     navigatePresentationToCreateAccountActivity(it, StringUtils.PAGE_CREATE)
@@ -87,6 +96,8 @@ class PresentationFragment : Fragment(), View.OnClickListener {
             delay(DELAY_TIME_MILISECONDS)
             animateDescriptionText(quickSearchTv)
             delay(DELAY_TIME_MILISECONDS)
+            animateDescriptionText(loginClientTv)
+            delay(DELAY_TIME_MILISECONDS)
             animateDescriptionText(createClientTv)
 
         }
@@ -106,6 +117,7 @@ class PresentationFragment : Fragment(), View.OnClickListener {
 
     private fun hideDescriptionText() {
        quickSearchTv.visibility = GONE
+        loginClientTv.visibility = GONE
         createClientTv.visibility = GONE
     }
 

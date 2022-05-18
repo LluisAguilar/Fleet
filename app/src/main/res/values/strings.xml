@@ -12,6 +12,7 @@
     <string name="quick_search_description">Quickly launch a search and look for the service you need</string>
     <string name="create_business_description">Create you own business and service and let the people know your greatness</string>
     <string name="create_account_description">Create a profile to participate in the community and get unique promos</string>
+    <string name="login_account_description">Login into your personal account</string>
 
     <!-- Image content description -->
     <string name="presentation_logo_image">presentation logo image</string>
@@ -25,4 +26,5 @@
     <string name="phoneNumber">Phone number</string>
     <string name="continue_txt">Continue</string>
     <string name="accept">Accept</string>
+    <string name="login_account">Login</string>
 </resources>

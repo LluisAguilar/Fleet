@@ -104,7 +104,9 @@ class CreateAccountFragment : Fragment(), View.OnClickListener {
                                 user_lastname_et.text.toString(),
                                 user_phone_et.text.toString()
                             )
-                            userDataViewModel.addUserAccountData(userInformation)
+                            userDataViewModel.addUserAccountData(userInformation).observe(this) { addDataResponse ->
+                                addDataResponse
+                            }
                         }else {
                             println("Could not create user")
                         }

@@ -30,10 +30,11 @@
             android:layout_gravity="center"
             android:text="@string/choose_option"
             android:textSize="25sp"
-            app:layout_constraintBottom_toTopOf="@id/quick_search_cv"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/margin_default_20_dimen"
+            />
 
         <ImageView
             android:id="@+id/info_iv"
@@ -60,7 +61,7 @@
             android:foreground="?android:attr/selectableItemBackground"
             app:cardCornerRadius="@dimen/margin_default_20_dimen"
             app:cardElevation="@dimen/margin_default_5_dimen"
-            app:layout_constraintBottom_toTopOf="@id/create_account_cv"
+            app:layout_constraintBottom_toTopOf="@id/login_account_cv"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/presentation_logo_tv">
@@ -109,6 +110,66 @@
             tools:visibility="visible" />
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/login_account_cv"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="@dimen/margin_default_20_dimen"
+            android:layout_marginEnd="@dimen/margin_default_20_dimen"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="@dimen/margin_default_20_dimen"
+            app:cardElevation="@dimen/margin_default_5_dimen"
+            app:layout_constraintBottom_toTopOf="@id/create_account_cv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/quick_search_cv">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login_account"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:layout_width="@dimen/width_default_10_dimen"
+                    android:layout_height="@dimen/height_default_10_dimen"
+                    android:layout_marginStart="@dimen/margin_default_10_dimen"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_client"
+                    app:tint="@color/colorPrimary" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/login_client_description_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_default_20_dimen"
+            android:layout_marginTop="@dimen/margin_default_10_dimen"
+            android:layout_marginEnd="@dimen/margin_default_20_dimen"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="@string/login_account_description"
+            android:textAlignment="center"
+            android:textColor="@color/gray_text"
+            android:textSize="@dimen/default_textview_size_14sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/login_account_cv"
+            tools:visibility="visible" />
+
+
+        <androidx.cardview.widget.CardView
             android:id="@+id/create_account_cv"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -122,7 +183,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/quick_search_cv">
+            app:layout_constraintTop_toBottomOf="@+id/login_account_cv">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -141,7 +202,7 @@
                     android:layout_height="@dimen/height_default_10_dimen"
                     android:layout_marginStart="@dimen/margin_default_10_dimen"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/ic_client"
+                    android:src="@drawable/ic_create_user"
                     app:tint="@color/colorPrimary" />
 
             </LinearLayout>
